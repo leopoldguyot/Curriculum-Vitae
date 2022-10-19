@@ -1,0 +1,189 @@
+
+%-------------------------------------------------------------------------------
+%                             DOCUMENT CLASS
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	%maincolor=cvgreen,
+	sidecolor=gray!50,
+	sectioncolor=materialblue,
+	subsectioncolor=materialindigo,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	profilepicsize=3.5cm,
+	% profilepicborderwidth=3.5pt,
+	profilepicstyle=profilecircle,
+	profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+]{sixtysecondscv}
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {materiallime, materialamber,
+	materialcyan, materialblue, materialindigo},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Léopold Guyot}
+% job title/career
+\cvjobtitle{Biology Bachelor,\\[0.2em] Bioinformatics}
+
+
+%% optional information
+% profile picture
+\cvprofilepic{cropped.jpg}
+
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{13 september 2002}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Avenue Jeanne 11, 1330 Rixensart, Belgium}
+% phone number
+\cvphone{+32 470 08 03 50}
+% email address
+\cvmail{leopold.guyot@student.uclouvain.be}
+% personal github
+\cvgithub{https://github.com/leopoldguyot}
+
+% any other custom entry
+% \cvcustomdata{\faFlag}{US Citizenship}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/shiny/}}
+
+
+	\profilesection{About Me}
+	
+	\aboutme{
+		I am passionate by bioinformatic and academic research, I would like to continue my studies by following the master in Bioinformatics at the ULB. I am really motivated by learning more about this field of study.
+	}
+
+
+	\profilesection{Languages}
+
+	  \pointskill{\flag{Great-Britain.png}}{English}{4}
+	  \pointskill{\flag{France.png}}{French}{5}
+	  \pointskill{\flag{Nederlands.png}}{Dutch}{2}
+	 
+
+	
+	\profilesection{Hard Skills}
+	
+		\skill{\flag{python_logo.png}}{Python Development}
+		\skill{\flag{R_logo.png}}{R and Rstudio}
+		\skill{\flag{excel_logo.png}}{Basic Excel}
+		\skill{\LaTeX}{Basic Latex}
+
+	\profilesection{Soft Skills}
+	
+        \skill{\faChild}{Motivated}
+		\skill{\faGroup}{Teamwork}
+        \skill{\faGears}{Problem solving}
+
+}
+    
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{Working Experience}
+\begin{cvtable}[3]
+	\cvitem{currently}{Tutor in university R courses}{UCLouvain}
+	    {Assisting the Professor during the courses}
+	\cvitem{2019}{Contrat Rivière Dyle-Gette}{SPW}
+	    {Control of aquatic invasive species}
+\end{cvtable}
+
+
+\cvsection{Education}
+
+\begin{cvtable}[1.5]
+    \cvitem{2020 --}{Biology Bachelor}{UCLouvain}
+        {With informatics courses followed}
+	\cvitem{2014 -- 2020}{Secondary School}{Saint Jean-Baptiste (Wavre)}
+		{Science and Math options}
+	\cvitem{2008 -- 2014}{Primary School}{Ecole du centre de Rixensart}{ }
+\end{cvtable}
+
+
+\cvsection{Experience}
+\begin{cvtable}
+	\cvitemshort{Jeunes et Nature}{I am an effective member in "Jeunes et Nature", this asbl organize activities like weekend or holliday camps to raise awareness of conservation among young people. I already have coordinate some activities, so I know what it takes to work in team.}
+\end{cvtable}
+
+
+\cvsection{Interests}
+\begin{cvtable}
+	\cvitemshort{Sports}{Bike and Running}
+	\cvitemshort{Music}{Guitar and Bass}
+	\cvitemshort{Technology}{Linux/Unix and open source projects, Video games}
+	\cvitemshort{Other}{Board games}
+\end{cvtable}
+
+
+\cvsignature  
+
+\end{document}
+ 
